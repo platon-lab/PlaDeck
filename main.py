@@ -140,7 +140,8 @@ def save_json(name, data):
 
 
 def autolabel(text, **kw):
-    lbl = Label(text=text, halign="left", valign="top", size_hint_y=None, **kw)
+    kw.setdefault("size_hint_y", None)
+    lbl = Label(text=text, halign="left", valign="top", **kw)
     lbl.bind(width=lambda i, w: setattr(i, "text_size", (w, None)),
              texture_size=lambda i, s: setattr(i, "height", s[1]))
     return lbl
@@ -656,7 +657,6 @@ class PlaDeckApp(App):
             item = TabbedPanelItem(text=title)
             item.add_widget(content)
             panel.add_widget(item)
-        panel.default_tab = panel.tab_list[-1] if False else panel.default_tab
         return panel
 
     def on_stop(self):
