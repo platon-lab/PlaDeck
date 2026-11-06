@@ -8,6 +8,8 @@ version = 1.0
 requirements = python3,kivy==2.3.0
 orientation = portrait
 fullscreen = 0
+p4a.branch = v2024.01.21
+android.ndk = 25b
 android.permissions = INTERNET,ACCESS_NETWORK_STATE
 android.api = 33
 android.minapi = 21
